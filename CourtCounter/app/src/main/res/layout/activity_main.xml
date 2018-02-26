@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.courtcounter.MainActivity">
+    <RelativeLayout
+        android:background="@drawable/field"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight= "1"
+        >
+
+            <ImageView
+                android:src="@drawable/eagles"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/team_a_score"
+        android:textSize="70sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginBottom="24dp"
+        android:text="0" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="touch down"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#ffffff"
+        android:background = "#05454B"
+        android:onClick="addThreeForTeamA"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#ffffff"
+        android:background = "#05454B"
+        android:text="field Goal"
+        android:onClick="addTwoForTeamA"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="addOneForTeamA"
+        android:textColor="#ffffff"
+        android:background = "#05454B"
+        android:text="Safety"
+        />
+    </LinearLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight= "1"
+        >
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textColor="#616161"-->
+            <!--android:fontFamily="sans-serif-medium"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:text="Team B" />-->
+        <ImageView
+            android:src="@drawable/patriots"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/team_b_score"
+            android:textSize="70sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginBottom="24dp"
+            android:text="0" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#ffffff"
+            android:background = "#022343"
+            android:text="touch down"
+            android:onClick="addThreeForTeamB"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#ffffff"
+            android:background = "#022343"
+            android:text="field Goal"
+            android:onClick="addTwoForTeamB"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#ffffff"
+            android:background = "#022343"
+            android:onClick="addOneForTeamB"
+            android:text="Free Throw"/>
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+        <ImageView
+            android:src="@drawable/superbowl52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+
+            />
+
+    </LinearLayout>
+
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom = 'true'
+            android:layout_centerHorizontal = 'true'
+            android:layout_marginBottom="15dp"
+            android:onClick="reset"
+            android:textColor="#ffffff"
+            android:background = "#ABA8B1"
+            android:text="Reset"/>
+    </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
