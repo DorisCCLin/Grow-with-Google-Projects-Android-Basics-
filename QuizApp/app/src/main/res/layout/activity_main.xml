@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.quizapp.MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:isScrollContainer="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to Qiz App"
+                android:textAlignment="center"
+                android:layout_marginBottom="36dp"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Your Name"
+                android:inputType="textCapWords" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="01. Which of the following are Wes Anderson movies?"
+                android:layout_marginTop="26dp" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical">
+
+                   <CheckBox
+                       android:id="@+id/fantastic_fox"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:textSize="16sp"
+                       android:text='Fantastic Mr. Fox' />
+                   <CheckBox
+                       android:id="@+id/moonrise"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:textSize="16sp"
+                       android:text='Moonrise Kingdom' />
+                   <CheckBox
+                       android:id="@+id/napoleon"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:textSize="16sp"
+                       android:text='Napoleon Dynamite' />
+
+               </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="02. In what year was the original 'Jurassic Park' film released?"
+                android:layout_marginTop="26dp" />
+
+            <RadioGroup
+                android:id="@+id/jurassic_park"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp">
+                <RadioButton
+                    android:id="@+id/year_2006"
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_marginRight="20dp"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content"
+                    android:text="2006"
+                    android:textAppearance="?android:textAppearanceMedium" />
+                <RadioButton
+                    android:id="@+id/year_1993"
+                    android:layout_marginRight="20dp"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_height="wrap_content"
+                    android:text="1993"
+                    android:textAppearance="?android:textAppearanceMedium" />
+                <RadioButton
+                    android:id="@+id/year_1967"
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginRight="20dp"
+                    android:text="1967"
+                    android:textAppearance="?android:textAppearanceMedium" />
+                <RadioButton
+                    android:id="@+id/year_1999"
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="1999"
+                    android:textAppearance="?android:textAppearanceMedium" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="03. What was Marilyn Monroe's name at birth?"
+                android:layout_marginTop="26dp" />
+
+            <EditText
+                android:id="@+id/guess_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Enter Your Answer Here"
+                android:inputType="textCapWords" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="04. In which Star Wars film did the Ewoks first appear?"
+                android:layout_marginTop="26dp" />
+
+            <Spinner
+                android:id="@+id/Q3dropDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="05. What was the name of the monkey in the Disney movie 'Aladdin'?"
+                android:layout_marginTop="26dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp">
+                <RadioButton
+                    android:id="@+id/radio_button"
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_marginRight="20dp"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content"
+                    android:text="Toto"
+                    android:textAppearance="?android:textAppearanceMedium" />
+                <RadioButton
+
+                    android:layout_marginRight="20dp"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_height="wrap_content"
+                    android:text="George"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+                <RadioButton
+
+                    android:layout_width="0dp"
+                    android:layout_weight='1'
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Abu"
+                    android:textAppearance="?android:textAppearanceMedium" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submit"
+                android:onClick="checkResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Submit" />
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:layout_marginTop="36dp" />
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
