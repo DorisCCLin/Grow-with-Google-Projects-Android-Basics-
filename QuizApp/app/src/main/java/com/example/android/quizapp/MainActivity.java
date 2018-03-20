@@ -1,15 +1,22 @@
 package com.example.android.quizapp;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -82,6 +89,40 @@ public class MainActivity extends AppCompatActivity {
         return totalScore;
     }
 
+    /**
+     * question4 checking function
+     */
+
+    public int question4(String userAnswer) {
+        String answer = "Return of the Jedi";
+        if( userAnswer.equalsIgnoreCase(answer) ){
+            totalScore += 1;
+            Log.v("MyActivity" , "Score: "+ totalScore);
+        } else {
+            totalScore += 0;
+            Log.v("MyActivity" , "Q4 no score");
+        }
+        return totalScore;
+    }
+
+    /**
+     * question5 checking function
+     */
+
+    public int question5(int selectedId) {
+        RadioButton toto = (RadioButton) findViewById(R.id.toto);
+        RadioButton george = (RadioButton) findViewById(R.id.george);
+        RadioButton abu = (RadioButton) findViewById(R.id.abu);
+
+        if(abu.getId() == selectedId){
+            totalScore += 1;
+            Log.v("MyActivity" , "Score: "+ totalScore);
+        } else {
+            totalScore += 0;
+            Log.v("MyActivity" , "Q5 no score");
+        }
+        return totalScore;
+    }
 
 
 
@@ -90,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void checkResult(View view) {
+
         CheckBox fantasticFox = (CheckBox) findViewById(R.id.fantastic_fox);
         boolean checkFantasticFox = fantasticFox.isChecked();
         CheckBox moonrise = (CheckBox) findViewById(R.id.moonrise);
@@ -97,25 +139,60 @@ public class MainActivity extends AppCompatActivity {
         CheckBox napoleon = (CheckBox) findViewById(R.id.napoleon);
         boolean checkNapoleon = napoleon.isChecked();
 
-        if (checkFantasticFox != null)
-
-        // question1
-
-        question1(checkFantasticFox, checkMoonrise, checkNapoleon );
-
-        // question2
         RadioGroup jurassicPark = (RadioGroup) findViewById(R.id.jurassic_park);
         int selectedId = jurassicPark.getCheckedRadioButtonId();
-        question2(selectedId);
-
-        // question3
         EditText guessedName = (EditText) findViewById(R.id.guess_name);
         String guessName = guessedName.getText().toString();
-        Log.v("MyActivity" , "text: "+ guessName);
-        question3(guessName);
+        Spinner mySpinner = (Spinner) findViewById(R.id.Q3dropDown);
+        String userAnswer = mySpinner.getSelectedItem().toString();
+        RadioGroup aladdin = (RadioGroup) findViewById(R.id.aladdin);
+        int obtainedId = aladdin.getCheckedRadioButtonId();
 
+        if((!checkFantasticFox && !checkMoonrise && !checkNapoleon) || (selectedId == 0) ||(guessName.equals("")) || (userAnswer.equals("Select an answer"))||(obtainedId == 0)){
+            Toast.makeText(MainActivity.this, "You got answer all the questions", Toast.LENGTH_LONG).show();
 
+        } else{
+            question1(checkFantasticFox, checkMoonrise, checkNapoleon );
+            question2(selectedId);
+            question3(guessName);
+            question4(userAnswer);
+            question5(obtainedId);
+            LinearLayout resultArea = (LinearLayout) findViewById(R.id.result_area);
+            Button submit = (Button) findViewById(R.id.submit);
+            EditText userName = (EditText) findViewById(R.id.name_text);
+            TextView result_text  = findViewById(R.id.result_text);
+            String user_name = userName.getText().toString();
+            resultArea.setVisibility(View.VISIBLE);
+            submit.setVisibility(View.GONE);
+            String msg = resultMessage(user_name);
+            result_text.setText(msg);
+
+        }
     }
 
+    public String resultMessage (String name){
+        ImageView resultImg = (ImageView) findViewById(R.id.result_image);
+        String msg;
+        if(totalScore <=1){
+            msg = name + ", you are a movie hater, ain't you?";
+            resultImg.setImageResource(R.drawable.help);
+        } else if (totalScore <=3){
+            msg = name + ", almost there, keep going!";
+            resultImg.setImageResource(R.drawable.keep);
+        } else{
+            msg = name + ", you are a true expert.";
+            resultImg.setImageResource(R.drawable.expert);
+        }
+        return msg;
+    }
+
+
+
+
+    public void reset (View v){
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
 
 }
